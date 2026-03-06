@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách công thức</title>
+</head>
+
+<body>
+
+<h1>Danh sách công thức nấu ăn</h1>
+
+<ul>
+    <li>Phở bò</li>
+    <li>Cơm chiên</li>
+    <li>Bún bò Huế</li>
+    <li>Mì xào hải sản</li>
+    <li>Gà chiên nước mắm</li>
+</ul>
+
+</body>
+</html>
