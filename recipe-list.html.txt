@@ -17,5 +17,7 @@
     <li>Gà chiên nước mắm</li>
 </ul>
 
+<p>Trang hiển thị danh sách công thức cho người dùng.</p>
+
 </body>
 </html>
