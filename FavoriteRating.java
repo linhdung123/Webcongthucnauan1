@@ -1,70 +1,88 @@
+import java.time.LocalDateTime;
+
 public class FavoriteRating {
 
     private int userId;
     private int itemId;
-    private int rating; // 1 - 5 stars
+    private int rating; // 1 -> 5
     private boolean favorite;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     // Constructor
     public FavoriteRating(int userId, int itemId, int rating, boolean favorite) {
         this.userId = userId;
         this.itemId = itemId;
-        this.rating = rating;
+        setRating(rating);
         this.favorite = favorite;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
-    // Getter and Setter
+    // Getter
     public int getUserId() {
         return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public int getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
     public int getRating() {
         return rating;
-    }
-
-    public void setRating(int rating) {
-        if (rating >= 1 && rating <= 5) {
-            this.rating = rating;
-        } else {
-            System.out.println("Rating must be between 1 and 5");
-        }
     }
 
     public boolean isFavorite() {
         return favorite;
     }
 
-    public void setFavorite(boolean favorite) {
-        this.favorite = favorite;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    // Display information
-    public void displayInfo() {
-        System.out.println("User ID: " + userId);
-        System.out.println("Item ID: " + itemId);
-        System.out.println("Rating: " + rating + " stars");
-        System.out.println("Favorite: " + (favorite ? "Yes" : "No"));
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    // Main test
-    public static void main(String[] args) {
-        FavoriteRating fr = new FavoriteRating(1, 101, 5, true);
-        fr.displayInfo();
+    // Update rating
+    public void updateRating(int newRating) {
+        if (newRating < 1 || newRating > 5) {
+            System.out.println("Rating must be between 1 and 5.");
+            return;
+        }
 
-        System.out.println("Update rating...");
-        fr.setRating(4);
-        fr.displayInfo();
+        this.rating = newRating;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    // Toggle favorite
+    public void toggleFavorite() {
+        this.favorite = !this.favorite;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    // Set rating with validation
+    private void setRating(int rating) {
+        if (rating < 1 || rating > 5) {
+            throw new IllegalArgumentException("Rating must be between 1 and 5");
+        }
+        this.rating = rating;
+    }
+
+    // Display info
+    public void display() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return "FavoriteRating {" +
+                "userId=" + userId +
+                ", itemId=" + itemId +
+                ", rating=" + rating +
+                ", favorite=" + favorite +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
