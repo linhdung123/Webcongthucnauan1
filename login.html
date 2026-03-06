@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg,#2980b9,#6dd5fa);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .login-box{
+            background:white;
+            padding:40px;
+            width:320px;
+            border-radius:10px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .login-box h2{
+            text-align:center;
+            margin-bottom:25px;
+        }
+
+        .input-box{
+            margin-bottom:15px;
+        }
+
+        .input-box label{
+            display:block;
+            margin-bottom:5px;
+        }
+
+        .input-box input{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        .login-btn{
+            width:100%;
+            padding:10px;
+            background:#2980b9;
+            border:none;
+            color:white;
+            font-size:16px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .login-btn:hover{
+            background:#1f6694;
+        }
+
+        .extra{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        .extra a{
+            text-decoration:none;
+            color:#2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h2>Đăng nhập</h2>
+
+    <form action="#" method="post">
+
+        <div class="input-box">
+            <label>Tên đăng nhập</label>
+            <input type="text" name="username" placeholder="Nhập username">
+        </div>
+
+        <div class="input-box">
+            <label>Mật khẩu</label>
+            <input type="password" name="password" placeholder="Nhập password">
+        </div>
+
+        <button class="login-btn">Đăng nhập</button>
+
+        <div class="extra">
+            <p>Chưa có tài khoản? <a href="#">Đăng ký</a></p>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
