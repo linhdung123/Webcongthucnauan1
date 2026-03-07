@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký tài khoản</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(120deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.register-box{
+    background:white;
+    padding:35px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.register-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.input-box{
+    margin-bottom:15px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:5px;
+}
+
+.input-box input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.register-btn{
+    width:100%;
+    padding:10px;
+    background:#4facfe;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.register-btn:hover{
+    background:#2e8de1;
+}
+
+.extra{
+    text-align:center;
+    margin-top:15px;
+}
+
+.extra a{
+    text-decoration:none;
+    color:#4facfe;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="register-box">
+
+<h2>Đăng ký</h2>
+
+<form action="#" method="post">
+
+<div class="input-box">
+<label>Họ và tên</label>
+<input type="text" name="fullname" placeholder="Nhập họ tên">
+</div>
+
+<div class="input-box">
+<label>Email</label>
+<input type="email" name="email" placeholder="Nhập email">
+</div>
+
+<div class="input-box">
+<label>Tên đăng nhập</label>
+<input type="text" name="username" placeholder="Nhập username">
+</div>
+
+<div class="input-box">
+<label>Mật khẩu</label>
+<input type="password" name="password" placeholder="Nhập mật khẩu">
+</div>
+
+<div class="input-box">
+<label>Nhập lại mật khẩu</label>
+<input type="password" name="confirm" placeholder="Xác nhận mật khẩu">
+</div>
+
+<button class="register-btn">Đăng ký</button>
+
+<div class="extra">
+<p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
