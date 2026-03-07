@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách đi chợ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+
+    input[type=text] {
+      width: 300px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+
+    .item {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Danh sách đi chợ</h1>
+  <form id="form">
+    <input type="text" id="newItem" placeholder="Nhập món" required />
+    <button>Thêm</button>
+  </form>
+  <ul id="list"></ul>
+
+  <script>
+    const form = document.getElementById('form');
+    const listEl = document.getElementById('list');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = document.getElementById('newItem');
+      const text = input.value.trim();
+      if (text) {
+        const li = document.createElement('li');
+        li.textContent = text;
+        li.className = 'item';
+        li.addEventListener('click', () => {
+          listEl.removeChild(li);
+        });
+        listEl.appendChild(li);
+        input.value = '';
+        input.focus();
+      }
+    });
+  </script>
+</body>
+
+</html>
