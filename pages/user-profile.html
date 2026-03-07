@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hồ sơ người dùng</title>
+    <link rel="stylesheet" href="../css/user-profile.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card card-left">
+        <div class="avatar-wrapper">
+          <img
+            src="../images/avatar.png"
+            alt="Ảnh đại diện"
+            class="avatar"
+            id="profileAvatar"
+          />
+        </div>
+        <h1 class="name" id="profileName">Tên người dùng</h1>
+        <p class="email" id="profileEmail">email@example.com</p>
+        <p class="bio" id="profileBio">
+          Chưa có mô tả. Hãy cập nhật ở form bên phải.
+        </p>
+
+        <div class="favorites">
+          <h2>Sở thích nấu ăn</h2>
+          <ul class="pill-list" id="profileFavorites"></ul>
+        </div>
+      </section>
+
+      <section class="card card-right">
+        <h2>Cập nhật hồ sơ</h2>
+        <p class="hint">
+          Thông tin được lưu trong trình duyệt (localStorage) của bạn, không gửi
+          lên server.
+        </p>
+
+        <form id="profileForm" class="form">
+          <div class="form-group">
+            <label for="fullName">Họ và tên</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Ví dụ: Nguyễn Văn A"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ban@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Giới thiệu ngắn</label>
+            <textarea
+              id="bio"
+              name="bio"
+              rows="3"
+              placeholder="Ví dụ: Mình thích món Việt và hay thử các món tráng miệng mới."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="favoriteCuisines"
+              >Món/loại món yêu thích (cách nhau bởi dấu phẩy)</label
+            >
+            <input
+              type="text"
+              id="favoriteCuisines"
+              name="favoriteCuisines"
+              placeholder="Ví dụ: Phở, Bún chả, Bánh flan"
+            />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Lưu hồ sơ</button>
+            <button type="button" id="resetProfile" class="btn outline">
+              Xóa dữ liệu
+            </button>
+          </div>
+
+          <p id="formMessage" class="message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="../js/user-profile.js"></script>
+  </body>
+  </html>
+
