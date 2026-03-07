@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Admin Quản Lý Món Ăn</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    margin:0;
+}
+
+header{
+    background:#ff6600;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.form-box{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+input,select{
+    width:100%;
+    padding:8px;
+    margin:5px 0 10px;
+}
+
+button{
+    background:#ff6600;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e65c00;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,table td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#333;
+    color:white;
+}
+
+.action-btn{
+    padding:5px 10px;
+    margin:2px;
+}
+
+.delete{
+    background:red;
+}
+
+.edit{
+    background:green;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Trang Admin - Quản Lý Món Ăn</h2>
+</header>
+
+<div class="container">
+
+<div class="form-box">
+
+<h3>Thêm Món Ăn</h3>
+
+<input type="text" id="name" placeholder="Tên món ăn">
+
+<input type="number" id="price" placeholder="Giá">
+
+<select id="category">
+<option>Món chính</option>
+<option>Món phụ</option>
+<option>Nước uống</option>
+</select>
+
+<input type="text" id="image" placeholder="Link hình ảnh">
+
+<button onclick="addFood()">Thêm món</button>
+
+</div>
+
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Tên món</th>
+<th>Giá</th>
+<th>Loại</th>
+<th>Hình</th>
+<th>Hành động</th>
+</tr>
+</thead>
+
+<tbody id="foodTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<script>
+
+let foods = []
+let id = 1
+
+function addFood(){
+
+let name = document.getElementById("name").value
+let price = document.getElementById("price").value
+let category = document.getElementById("category").value
+let image = document.getElementById("image").value
+
+let food = {
+    id:id++,
+    name:name,
+    price:price,
+    category:category,
+    image:image
+}
+
+foods.push(food)
+
+render()
+
+}
+
+function render(){
+
+let table = document.getElementById("foodTable")
+
+table.innerHTML=""
+
+foods.forEach((f,index)=>{
+
+table.innerHTML += `
+<tr>
+<td>${f.id}</td>
+<td>${f.name}</td>
+<td>${f.price}</td>
+<td>${f.category}</td>
+<td><img src="${f.image}" width="60"></td>
+<td>
+<button class="action-btn delete" onclick="deleteFood(${index})">Xóa</button>
+</td>
+</tr>
+`
+
+})
+
+}
+
+function deleteFood(index){
+
+foods.splice(index,1)
+
+render()
+
+}
+
+</script>
+
+</body>
+</html>
